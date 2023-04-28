@@ -9,11 +9,9 @@ finishing, save everything into logs folder.
 """
 
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
 
 from config import *
 
-import os
 import json
 import numpy as np
 from datetime import datetime
@@ -70,13 +68,13 @@ def save(model, H, configs):
 
     Parameters
     ----------
-        model: tensorflow.keras model
-            already-trained model with corresponding weights.
-        H: History.history
-            a record of training loss values and metrics values at successive
-            epochs, validation loss values and validation metrics values.
-        configs: list
-            a list of 4 dicts of the configs used for the whole process.
+    model: tensorflow.keras model
+        already-trained model with corresponding weights.
+    H: History.history
+        a record of training loss values and metrics values at successive
+        epochs, validation loss values and validation metrics values.
+    configs: list
+        a list of 4 dicts of the configs used for the whole process.
 
     """
 

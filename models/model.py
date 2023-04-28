@@ -23,12 +23,6 @@ from tensorflow.keras.layers import (
     Conv2D, MaxPooling2D
 )
 
-compile_setup = {
-    "loss": "categorical_crossentropy",
-    "optimizer": "adam",
-    "metrics": ["accuracy"],
-}
-
 
 def init_model():
     """
