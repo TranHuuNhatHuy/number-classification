@@ -3,21 +3,23 @@
 Summary
 -------
 
-Contains CNN model architecture for classifying numbers. For this project:
+Contains CNN model architecture for classifying numbers. This model includes:
 
-    - Dataset: [MNIST](https://www.tensorflow.org/datasets/catalog/mnist).
-    - Input: 70,000 black-white, 28x28 images of hand-writing 0-9 numbers.
-    - Output: preprocessed image data.
+    1. Convolutional layer, 32 kernels, size 3x3, sigmoid activation.
+    2. Convolutional layer, 32 kernels, size 3x3, sigmoid activation.
+    3. Max pooling layer, size 2x2.
+    4. Flatten layer.
+    5. Fully-connected layer, 128 nodes, sigmoid activation.
+    6. Output layer, 10 nodes, softwax activation.
 
 """
 
 
 import tensorflow as tf
-import tensorflow.keras as keras
 
-from keras.models import Sequential
-from keras.layers import (
-    Dense, Dropout, Activation, Flatten,
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import (
+    Dense, Flatten,
     Conv2D, MaxPooling2D
 )
 
@@ -83,17 +85,11 @@ def init_model():
         activation="sigmoid"
     ))
 
-    # Output layer: 10 nodes, softmax function
+    # Output layer: 10 nodes, softmax activation
     model.add(Dense(
         10,
         activation="softmax"
     ))
-
-    # -------- ------------- -------- #
-
-    # -------- Compile model -------- #
-
-    model.compile(**compile_setup)
 
     # -------- ------------- -------- #
 
